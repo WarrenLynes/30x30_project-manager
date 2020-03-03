@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "thirtyForThirtyProgressTracker",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "thirty-for-thirty-progress-tracker",
+      "kebab-case"
+    ]
+  }
+}

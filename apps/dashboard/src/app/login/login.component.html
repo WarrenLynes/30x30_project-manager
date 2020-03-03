@@ -1,0 +1,51 @@
+
+
+<div class="container">
+  <div class="col-  centercenter" style="text-align: right;">
+
+    <div class="full-width" style="display: flex; justify-content: space-between;">
+      <h4>{{authType}}</h4>
+      <mat-menu #authMenu="matMenu">
+        <button mat-menu-item type="button" (click)="toggleAuthType()"> {{authType === 'register' ? 'login' : 'register'}} </button>
+        <button mat-menu-item type="button"> login with google </button>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="authMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="email" formControlName="email" type="email" name="email" autocomplete="off">
+        <mat-error *ngIf="form.controls['email'].hasError('required')">email is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="password" formControlName="password" type="password" name="password" autocomplete="off">
+        <mat-error *ngIf="form.controls['password'].hasError('required')">password is required</mat-error>
+      </mat-form-field>
+
+
+      <div *ngIf="authType === 'register'">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="name" formControlName="name" type="text" name="name" autocomplete="off">
+          <mat-error *ngIf="form.controls['name'].hasError('required')">name is required</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="phone" formControlName="phone" type="string" name="phone" autocomplete="off">
+        </mat-form-field>
+      </div>
+
+      <div class="form-actions">
+        <span class="full-width centered">
+          <button mat-icon-button type="submit">
+            <mat-icon>done</mat-icon>
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

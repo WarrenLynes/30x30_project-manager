@@ -15,7 +15,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@thirty-for-thirty-progress-tracker/material": [
+        "libs/material/src/index.ts"
+      ],
+      "@thirty-for-thirty-progress-tracker/ui": ["libs/ui/src/index.ts"],
+      "@thirty-for-thirty-progress-tracker/core-data": [
+        "libs/core-data/src/index.ts"
+      ],
+      "@thirty-for-thirty-progress-tracker/core-state": [
+        "libs/core-state/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,19 @@
+<div *ngIf="items && items.length; else noItems">
+  <mat-list>
+    <mat-list-item *ngFor="let entity of items" (click)="selectItem.emit(entity.id)">
+      <div mat-line style="display: flex; justify-content: space-between;">
+        <h4 class="col-3">{{entity.name}}</h4>
+        <div class="list-urls col-3">
+          <button mat-button class="full-width" (click)="navToUrl(entity.githubUrl); $event.stopPropagation();"> {{entity.githubUrl}} </button>
+          <button mat-button class="full-width" (click)="navToUrl(entity.apiUrl); $event.stopPropagation();"> {{entity.apiUrl}} </button>
+        </div>
+      </div>
+      <mat-slider mat-line class="col-3" min="0" max="100" step="0.5" [value]="entity.progress" disabled></mat-slider>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<ng-template #noItems>
+  <h4>you have no items</h4>
+</ng-template>
+

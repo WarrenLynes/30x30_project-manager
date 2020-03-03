@@ -1,0 +1,15 @@
+.list-urls * {
+  margin: 0;
+}
+.list-urls {
+  .col-3 {
+    padding: 0px;
+  }
+  button {
+    display: block!important;
+  }
+}
+
+.mat-list-item {
+  height: auto!important;
+}
